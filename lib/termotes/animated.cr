@@ -27,14 +27,13 @@ module Termotes
     def self.from_gif(path, x, y, fps = nil)
       Dir.mkdir frames = File.tempname
       `ffmpeg -i #{path} -vsync 0 #{frames}/%03d.png 2> /dev/null` # TODO: StumpyGIF
-      unless fps
+
+      fps ||= begin
         rate = `ffprobe -v 0 -of csv=p=0 -show_entries stream=r_frame_rate #{path}`
         n, d = rate.split('/').map &.to_f
-        fps = n / d
+        n / d
       end
-
-      frames = Dir["#{frames}/*"].sort.map { |f| StumpyPNG.read f }
-      new frames, x, y, fps
+      new Dir["#{frames}/*"].sort.map { |f| StumpyPNG.read f }, x, y, fps
     end
   end
 end
