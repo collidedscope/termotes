@@ -10,4 +10,4 @@ Another demonstration for good measure:
 
 <p align="center"><img src="https://i.imgur.com/OZLBtvH.gif" /></p>
 
-Full disclosure: these images showcase idealized scenarios; while the render loop does go out of its way to gracefully respond to changes in window size (either via explicit resizing or {in,de}creasing the font size), the transition can be a little jarring in practice. Please see [demo.mp4](demo.mp4) for a more realistic run.
+Full disclosure: these images showcase idealized scenarios; while the render loop does go out of its way to gracefully respond to changes in window size (either via explicit resizing or {in,de}creasing the font size), the transition can be a little jarring in practice. Please see [this video](https://collidedscope.github.io/termotes/demo.mp4) for a more realistic run.
