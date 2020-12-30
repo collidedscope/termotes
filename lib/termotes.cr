@@ -6,7 +6,8 @@ module Termotes
   class_property \
     lines = 0,
     columns = 0,
-    resized_at = Time.local
+    resized_at = Time.local,
+    have_ffmpeg = Process.find_executable "ffmpeg"
 
   update_dimensons
 

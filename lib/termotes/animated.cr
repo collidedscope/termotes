@@ -25,6 +25,8 @@ module Termotes
     end
 
     def self.from_gif(path, x, y, fps = nil)
+      abort "ffmpeg not found; can't do GIFs" unless Termotes.have_ffmpeg
+
       Dir.mkdir frames = File.tempname
       `ffmpeg -i #{path} -vsync 0 #{frames}/%03d.png 2> /dev/null` # TODO: StumpyGIF
 
