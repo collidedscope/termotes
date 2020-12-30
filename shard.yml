@@ -1,0 +1,7 @@
+name: termotes
+version: 0.1.0
+
+dependencies:
+  stumpy_png:
+    github: stumpycr/stumpy_png
+    version: "~> 5.0"
