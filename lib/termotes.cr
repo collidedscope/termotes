@@ -65,7 +65,7 @@ module Termotes
       File.write path, resp.body
     end
 
-    [path, type]
+    {path, type}
   end
 end
 
